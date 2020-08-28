@@ -1,0 +1,80 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4"
+  style="background-image: url('{% static 'website/images/bg_1.jpg'%}');">
+  <div class="container">
+    <div class="row align-items-end">
+      <div class="col-lg-7">
+        <h2 class="mb-0">Contact</h2>
+        <p>contactez nous par e-mail pour plus d'informations</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="custom-breadcrumns border-bottom">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <span class="mx-3 icon-keyboard_arrow_right"></span>
+    <span class="current">Contact</span>
+  </div>
+</div>
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3297.409624454756!2d-6.590823284929313!3d34.26360528054897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda759e7ddce6963%3A0xb925991ae7d24086!2sICAC%20SUP!5e0!3m2!1sfr!2sma!4v1598455692432!5m2!1sfr!2sma"
+          width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+          tabindex="0"></iframe>
+      </div>
+    </div>
+    {% if messages %}
+      <div class="alert alert-success m-2" role="alert">
+      {% for message in messages %}
+        {{message|safe}}
+       {% endfor %}
+      </div>
+    {% endif %}
+    <form action="{% url 'contact'%}" method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label for="fname">First Name</label>
+        <input type="text" name="contact-fname" id="fname" class="form-control form-control-lg">
+      </div>
+      <div class="col-md-6 form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" name="contact-lname" id="lname" class="form-control form-control-lg">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label for="eaddress">Email Address</label>
+        <input type="text" name="contact-mail" id="eaddress" class="form-control form-control-lg">
+      </div>
+      <div class="col-md-6 form-group">
+        <label for="tel">Tel. Number</label>
+        <input type="text" name= "contact-tel" id="tel" class="form-control form-control-lg">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <label for="message">Message</label>
+        <textarea name="contact-message" id="message" cols="30" rows="10" class="form-control"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <input type="submit" value="Send Message" class="btn btn-primary btn-lg px-5">
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+{% endblock %}
