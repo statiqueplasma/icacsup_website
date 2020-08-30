@@ -14,7 +14,7 @@ def contact(request):
         contact_message = request.POST['contact-message']
         send_mail(
             "website contact",
-            "message de :" + contact_lname + contact_fname + '/n' + "--------------------------" + '/n' + contact_message,
+            "message de :" + contact_lname + contact_fname + '|' + 'tel: ' + contact_tel + '/n' + "--------------------------" + '/n' + contact_message,
             contact_mail,
             ['hay.aouadidrissi@gmail.com']
         )
