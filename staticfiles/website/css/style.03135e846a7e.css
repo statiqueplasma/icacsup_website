@@ -913,7 +913,7 @@ h1, h2, h3, h4, h5,
 
 .feature-1 .feature-1-content, .person .feature-1-content {
   padding: 50px 20px 20px 20px;
-  text-align: center; }
+  text-align: left; }
   .feature-1 .feature-1-content h2, .person .feature-1-content h2 {
     font-size: 1.3rem;
     color: #d40005; }
