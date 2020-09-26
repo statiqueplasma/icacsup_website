@@ -1,9 +1,42 @@
 from django.shortcuts import render
 from django.contrib import messages
+from .models import articles, metiers, programmes, details
 from django.core.mail import send_mail
+from django.views.generic import DetailView, ListView
 # Create your views here.
-def home(request):
-    return render(request, 'index.html', {})
+
+class HomeView(ListView):
+    model = articles
+    template_name = 'index.html'
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['metiers'] = metiers.objects.all()
+        context['programmes'] = programmes.objects.all()
+        context['details'] = details.objects.all()
+        return context
+    
+class ArticleView(DetailView):
+    model = articles
+    template_name = 'article.html'
+
+class MetierListView(ListView):
+    model = metiers
+    template_name = 'metiers_list.html'    
+
+class MetierView(DetailView):
+    model = metiers
+    template_name = 'metier.html'
+
+class programmeListView(ListView):
+    model = programmes
+    template_name = 'programmes_list.html'
+
+class ProgrammeView(DetailView):
+    model = programmes
+    template_name = 'programme_lic.html'
+class masterView(DetailView):
+    model = programmes
+    template_name = 'programme_mas.html'
 
 def contact(request):
     if request.method == "POST":

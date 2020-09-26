@@ -1,0 +1,97 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4"
+    style="background-image: url('{% static 'Website/images/bg_1.jpg' %}')">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-7">
+                <h2 class="mb-0">{{programmes.pk}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="custom-breadcrumns border-bottom">
+    <div class="container">
+        <a href="{% url 'home' %}">Home</a>
+        <span class="mx-3 icon-keyboard_arrow_right"></span>
+        <a href="#">Parcours</a>
+        <span class="mx-3 icon-keyboard_arrow_right"></span>
+        <span class="current">{{programmes.pk}}</span>
+    </div>
+</div>
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-12 ml-auto align-self-center">
+                <h1 class="section-title-underline mb-5">
+                    <span>{{programmes.titre}} - licence (bac + 3)</span>
+                </h1>
+            </div>
+            <div class="col-lg-12 ml-auto align-self-center justify-content-start">
+                <h3 class="section-title-underline mb-5">
+                    <span>ORGANISATION DU CURSUS</span>
+                </h3>
+                <p>{{programmes.contenue}}</p>
+            </div>
+            <div class="col-lg-12 ml-auto align-self-center justify-content-start">
+                <h3 class="section-title-underline mb-5">
+                    <span>PROGRAMMES D’ETUDES</span>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-4 ml-auto align-self-top">
+                <div class="programme">
+                    <h4 style="color: #052172;">Semestres 1 & 2 (1ère année)</h4>
+                    <h5 style="color: #d40005;">{{programmes.licence_sem_1_titre|safe}}</h5>
+                    <span style="font-weight: bold;">Module 1 : {{programmes.licence_sem_1_mod1_titre|safe}}</span>
+                    <p>{{programmes.licence_sem_1_mod1|safe}}</p>
+                    <span style="font-weight: bold;">Module 1 : {{programmes.licence_sem_1_mod2_titre|safe}}</span>
+                    <p>{{programmes.licence_sem_1_mod2|safe}}</p>
+                    <h5 style="color: #d40005;">{{programmes.licence_sem_2_titre|safe}}</h5>
+                    <span style="font-weight: bold;">Module 2 : {{programmes.licence_sem_2_mod1_titre|safe}}</span>
+                    <p>{{programmes.licence_sem_2_mod1|safe}}</p>
+                    <span style="font-weight: bold;">Module 1 : {{programmes.licence_sem_2_mod2_titre|safe}}</span>
+                    <p>{{programmes.licence_sem_2_mod2|safe}}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 ml-auto align-self-top">
+                <div class="programme">
+                    <h4 style="color: #052172;">Semestres 3 & 4 (2éme année)</h4>
+                    <h5 style="color: #d40005;">{{programmes.licence_sem_3_titre|safe}}</h5>
+                    <span style="font-weight: bold;">Module 1 : {{programmes.licence_sem_3_mod1_titre|safe}}</span>
+                    <p>{{programmes.licence_sem_3_mod1|safe}}</p>
+                    <span style="font-weight: bold;">Module 1 : {{programmes.licence_sem_3_mod2_titre|safe}}</span>
+                    <p>{{programmes.licence_sem_3_mod2|safe}}</p>
+                    <h5 style="color: #d40005;">{{programmes.licence_sem_4_titre|safe}}</h5>
+                    <span style="font-weight: bold;">Module 2 : {{programmes.licence_sem_4_mod1_titre|safe}}</span>
+                    <p>{{programmes.licence_sem_4_mod1|safe}}</p>
+                    <span style="font-weight: bold;">Module 1 : {{programmes.licence_sem_4_mod2_titre|safe}}</span>
+                    <p>{{programmes.licence_sem_4_mod2|safe}}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 ml-auto align-self-top">
+                <div class="programme">
+                    <h4 style="color: #052172;">Semestres 5 & 6 (3"me année)</h4>
+                    <h5 style="color: #d40005;">{{programmes.licence_sem_5_titre}}</h5>
+                    <span style="font-weight: bold;">Module 1 : {{programmes.licence_sem_5_mod1_titre}}</span>
+                    <p>{{programmes.licence_sem_5_mod1}}</p>
+                    <span style="font-weight: bold;">Module 2 : {{programmes.licence_sem_5_mod2_titre}}</span>
+                    <p>{{programmes.licence_sem_5_mod2}}</p>
+                    <h5 style="color: #d40005;">{{programmes.licence_sem_6_titre}}</h5>
+                    <span style="font-weight: bold;">Module 1 : {{programmes.licence_sem_6_mod1_titre}}</span>
+                    <p>{{programmes.licence_sem_6_mod1}}</p>
+                    <span style="font-weight: bold;">Module 2 : {{programmes.licence_sem_6_mod2_titre}}</span>
+                    <p>{{programmes.licence_sem_6_mod2}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

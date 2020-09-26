@@ -1,0 +1,146 @@
+{% extends 'base.html'%}
+{% load static %}
+    {% block content %}  
+    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('{% static 'Website/images/bg_1.jpg' %}')">
+        <div class="container">
+          <div class="row align-items-end">
+            <div class="col-lg-7">
+              <h2 class="mb-0">{{articles.pk}}</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+    
+
+    <div class="custom-breadcrumns border-bottom">
+      <div class="container">
+        <a href="{% url 'home' %}">Home</a>
+        <span class="mx-3 icon-keyboard_arrow_right"></span>
+        <a href="#">Articles</a>
+        <span class="mx-3 icon-keyboard_arrow_right"></span>
+        <span class="current">{{articles.pk}}</span>
+      </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+          <div class="row mb-5">
+            {% if articles.image_block_1 %}
+            <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                <img src="{{articles.image_block_1.url}}" alt="Image" class="img-fluid"> 
+            </div>
+            {% else %}
+              <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                <img src="{% static 'Website/images/logo2.png'%}" alt="Image" class="img-fluid">
+              </div>
+            {% endif %}
+            <div class="col-lg-5 ml-auto align-self-center">
+                <h2 class="section-title-underline mb-5">
+                    <span>{{articles.titre_block_1}}</span>
+                </h2>
+                <p>{{articles.block_1|safe}}</p>
+            </div>
+        </div>
+           {% if articles.titre_block_2 %}
+              <div class="row mb-5">
+                   <div class="col-lg-5 ml-auto align-self-center">
+                      <h2 class="section-title-underline mb-5">
+                          <span>{{articles.titre_block_2}}</span>
+                      </h2>
+                      <p>{{articles.block_2|safe}}</p>
+                  </div>
+                  {% if articles.image_block_2 %}
+                  <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                      <img src="{{articles.image_block_2.url}}" alt="Image" class="img-fluid"> 
+                  </div>
+                  {% else %}
+                    <div class="col-lg-6 mb-lg-0 mb-4 align-self-center ">
+                      <img src="{% static 'Website/images/logo2.png'%}" alt="Image" class="img-fluid">
+                    </div>
+                  {% endif %}
+                    </div>
+           {% endif %}
+           {% if articles.titre_block_3%}
+              <div class="row mb-5">
+                {% if articles.image_block_3 %}
+                <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                    <img src="{{articles.image_block_3.url}}" alt="Image" class="img-fluid"> 
+                </div>
+                {% else %}
+                  <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                    <img src="{% static 'Website/images/logo2.png'%}" alt="Image" class="img-fluid">
+                  </div>
+                {% endif %}
+                  <div class="col-lg-5 ml-auto align-self-center">
+                      <h2 class="section-title-underline mb-5">
+                          <span>{{articles.titre_block_3}}</span>
+                      </h2>
+                      <p>{{articles.block_3|safe}}</p>
+                  </div>
+              </div>
+           {% endif %}
+           {% if articles.titre_block_4%}
+              <div class="row mb-5">                  
+                  <div class="col-lg-5 ml-auto align-self-center">
+                      <h2 class="section-title-underline mb-5">
+                          <span>{{articles.titre_block_4}}</span>
+                      </h2>
+                      <p>{{articles.block_4|safe}}</p>
+                  </div>
+                  {% if articles.image_block_4 %}
+                  <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                      <img src="{{articles.image_block_4.url}}" alt="Image" class="img-fluid"> 
+                  </div>
+                  {% else %}
+                    <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                      <img src="{% static 'Website/images/logo2.png'%}" alt="Image" class="img-fluid">
+                    </div>
+                  {% endif %}
+                    </div>
+           {% endif %}
+           {% if articles.titre_block_5%}
+              <div class="row mb-5">
+                {% if articles.image_block_5 %}
+                <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                    <img src="{{articles.image_block_5.url}}" alt="Image" class="img-fluid"> 
+                </div>
+                {% else %}
+                  <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                    <img src="{% static 'Website/images/logo2.png'%}" alt="Image" class="img-fluid">
+                  </div>
+                {% endif %}
+                  <div class="col-lg-5 ml-auto align-self-center">
+                      <h2 class="section-title-underline mb-5">
+                          <span>{{articles.titre_block_5}}</span>
+                      </h2>
+                      <p>{{articles.block_5|safe}}</p>
+                  </div>
+              </div>
+           {% endif %}
+           {% if articles.titre_block_6%}
+              <div class="row mb-5">                  
+                  <div class="col-lg-5 ml-auto align-self-center">
+                      <h2 class="section-title-underline mb-5">
+                          <span>{{articles.titre_block_6}}</span>
+                      </h2>
+                      <p>{{articles.block_6|safe}}</p>
+                  </div>
+                  {% if articles.image_block_6 %}
+                  <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                      <img src="{{articles.image_block_6.url}}" alt="Image" class="img-fluid"> 
+                  </div>
+                  {% else %}
+                    <div class="col-lg-6 mb-lg-0 mb-4 align-self-center">
+                      <img src="{% static 'Website/images/logo2.png'%}" alt="Image" class="img-fluid">
+                    </div>
+                  {% endif %}
+                    </div>
+           {% endif %}
+           <p style="color: #052172;">Dérnière modification : <span style="color: #d40005;">{{articles.date}}</span></p> 
+        </div>
+    </div>
+  {% endblock %}
+   
+      
+
+   
