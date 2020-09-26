@@ -28,7 +28,7 @@ SECRET_KEY = 'fc%&r$gaef_nn5sbgnky)*yznrl-#3%!q6%(gm1)1v8@a-72#6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['icacsup.herokuapp.com','localhost', '127.0.0.1:8000',]
 
 
 # Application definition
