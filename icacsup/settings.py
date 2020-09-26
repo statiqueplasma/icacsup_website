@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'fc%&r$gaef_nn5sbgnky)*yznrl-#3%!q6%(gm1)1v8@a-72#6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','icacsup.herokuapp.com']
+ALLOWED_HOSTS = ['ec2-18-191-37-35.us-east-2.compute.amazonaws.com:8000']
 
 
 # Application definition
