@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path, os
-import django_heroku
-import dj_database_url
+#import django_heroku
+#import dj_database_url
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -146,4 +146,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #EMAIL_USE_TLS = False
 #EMAIL_USE_SSL = False
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
