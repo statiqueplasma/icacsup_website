@@ -1,4 +1,4 @@
-/* Base */
+
 body {
   line-height: 1.7;
   color: black;
@@ -236,7 +236,7 @@ h1, h2, h3, h4, h5,
     appearance: none;
     width: 100%; }
 
-/* Navbar */
+
 .site-logo {
   position: relative;
   font-weight: 900;
@@ -569,7 +569,7 @@ h1, h2, h3, h4, h5,
     padding-top: 10px !important;
     padding-bottom: 10px !important; }
 
-/* Blocks */
+
 .intro-section {
   background-size: cover;
   position: relative; }
