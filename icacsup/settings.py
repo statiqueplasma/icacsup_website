@@ -27,23 +27,22 @@ SECRET_KEY = 'fc%&r$gaef_nn5sbgnky)*yznrl-#3%!q6%(gm1)1v8@a-72#6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = ['127.0.0.1','18.191.37.35',"18.191.37.35"]
+ALLOWED_HOSTS = ['127.0.0.1','icacsup.herokuapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'website',
-    #'courses',
-    #'userspace',
 ]
 
 MIDDLEWARE = [
@@ -133,11 +132,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #EMAIL_HOST = 'localhost'
 #EMAIL_PORT = '1025'
@@ -146,4 +145,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #EMAIL_USE_TLS = False
 #EMAIL_USE_SSL = False
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
